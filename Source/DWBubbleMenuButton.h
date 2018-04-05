@@ -33,6 +33,7 @@ typedef NS_ENUM(NSUInteger, ExpansionDirection) {
 @property (nonatomic, weak, readonly) NSArray *buttons;
 @property (nonatomic, strong) UIView *homeButtonView;
 @property (nonatomic, readonly) BOOL isCollapsed;
+@property (nonatomic) CGFloat  startingPointAnimation;
 @property (nonatomic, weak) id <DWBubbleMenuViewDelegate> delegate;
 
 // The direction in which the menu expands

@@ -106,7 +106,7 @@
                 break;
                 
             case DirectionUp:
-                originPosition = CGPointMake(self.frame.size.width/2.f, self.frame.size.height - self.homeButtonView.frame.size.height);
+                originPosition = CGPointMake(self.startingPointAnimation?self.startingPointAnimation:self.frame.size.width/2.f, self.frame.size.height - self.homeButtonView.frame.size.height);
                 finalPosition = CGPointMake(self.frame.size.width/2.f,
                                             self.frame.size.height - self.homeButtonView.frame.size.height - self.buttonSpacing - button.frame.size.height/2.f
                                             - ((button.frame.size.height + self.buttonSpacing) * index));
@@ -221,7 +221,7 @@
                 break;
                 
             case DirectionUp:
-                finalPosition = CGPointMake(self.frame.size.width/2.f, self.frame.size.height - self.homeButtonView.frame.size.height);
+                finalPosition = CGPointMake(self.startingPointAnimation?self.startingPointAnimation :self.frame.size.width/2.f, self.frame.size.height - self.homeButtonView.frame.size.height);
                 break;
                 
             case DirectionDown:
@@ -484,7 +484,7 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
        shouldReceiveTouch:(UITouch *)touch {
     CGPoint touchLocation = [touch locationInView:self];
-
+    
     if ([self _subviewForPoint:touchLocation] != self && _collapseAfterSelection) {
         return YES;
     }
